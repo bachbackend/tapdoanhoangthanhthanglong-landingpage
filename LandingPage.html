@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Công ty TNHH Tập đoàn Hoàng Thành Thăng Long - Báo giá & Liên hệ</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    header {
+  font-family: "Arial", sans-serif;
+}
+
+header .bg-gray-100 {
+  background-color: #f8f9fa;
+}
+
+header .text-orange-600 {
+  color: #d46a1a; /* tông cam đất trầm, nghiêm túc hơn */
+}
+
+header a:hover {
+  opacity: 0.85;
+}
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+  }
+
+  /* HERO with Parallax */
+  .hero {
+    background-image: url('https://images.pexels.com/photos/207142/pexels-photo-207142.jpeg?cs=srgb&dl=pexels-pixabay-207142.jpg&fm=jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 130px 20px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* lớp phủ tối 45% */
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  /* Hover effect for product cards */
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .product-card img {
+  width: 100%;
+  height: 550px;              /* Chiều cao cố định, có thể chỉnh theo ý bạn (vd: 230px hoặc 280px) */
+  object-fit: cover;          /* Cắt ảnh cho vừa khung mà không méo */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Custom Button */
+  .cta-btn {
+    background-color: #d35400; /* Cam gạch */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background-color: #b84400;
+  }
+
+  /* Price quote section */
+  #quote-section {
+    background: linear-gradient(to right, #f5f5f5, #ebebeb);
+    padding: 80px 20px;
+  }
+
+  #quote-section h2 {
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  .form-control, .form-select {
+    border-radius: 8px;
+  }
+
+  /* Contact section */
+  #contact {
+    background: linear-gradient(to right, #f8f8f8, #eaeaea);
+    padding: 80px 20px;
+    border-top: 4px solid #d35400;
+  }
+
+  #contact h2 {
+    color: #2c3e50;
+    font-weight: 700;
+  }
+
+  #contact p, #contact a {
+    color: #333;
+    font-size: 1rem;
+  }
+
+  footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+</style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="bg-white shadow-md sticky top-0 z-50 border-b">
+  <!-- Thanh thông tin trên cùng -->
+  <div class="bg-gray-100 text-sm text-gray-700 py-2">
+    <div class="container mx-auto flex flex-wrap justify-center md:justify-between items-center gap-2 px-3">
+      <span>📍 <strong>Địa chỉ:</strong> Số 8B, Ngõ 5, Phố Ao Sen, Hà Đông, Hà Nội</span>
+      <span>💼 <strong>MST:</strong> 0109876543</span>
+      <span>📞 <strong>Hotline:</strong> <a href="tel:0934626355" class="text-orange-600 fw-bold hover:underline">0934 626 355</a></span>
+    </div>
+  </div>
+
+  <!-- Thanh logo + nút -->
+  <div class="container mx-auto flex flex-wrap justify-between items-center py-3 px-3">
+    <h2 class="text-xl md:text-2xl font-bold text-orange-600">
+      Công ty TNHH Tập đoàn Hoàng Thành Thăng Long
+    </h2>
+    <div class="mt-2 md:mt-0">
+      <a href="#quote-section" class="btn btn-warning text-white fw-bold me-2 px-3 py-2">Báo giá nhanh</a>
+      <a href="#contact" class="btn btn-outline-warning fw-bold px-3 py-2">Liên hệ</a>
+    </div>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Xây Dựng Niềm Tin – Kiến Tạo Tương Lai</h1>
+      <p class="text-lg mb-5 max-w-2xl mx-auto">Cung cấp các loại gạch xây dựng và vật liệu chất lượng cao – bền, đẹp và thân thiện môi trường.</p>
+      <a href="#products" class="cta-btn inline-block">Khám phá ngay</a>
+    </div>
+  </section>
+
+  <!-- SẢN PHẨM -->
+  <section class="bg-gray-100 py-5" id="products">
+  <div class="container">
+    <h2 class="text-center text-3xl font-bold mb-5" data-aos="fade-up">Sản phẩm nổi bật</h2>
+    <div class="row g-4">
+      
+      <!-- Gạch Đỏ Truyền Thống -->
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="Picture/Gạch đặc A1.jpg" class="card-img-top" alt="Gạch đặc A1">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Gạch Đặc Tuynel A1</h5>
+            <p class="card-text text-gray-600">Bền màu, chịu lực tốt, phù hợp cho mọi công trình.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gạch Block Xi Măng -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://phukiencongtrinh.com/uploads/shops/2023-2/4-4-18-2.jpg" class="card-img-top" alt="Gạch block xi măng">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Gạch Block Xi Măng</h5>
+            <p class="card-text text-gray-600">Tiết kiệm chi phí, dễ thi công, thân thiện môi trường.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gạch Ốp Lát Cao Cấp -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80" class="card-img-top" alt="Gạch ốp lát">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Gạch Ốp Lát Cao Cấp</h5>
+            <p class="card-text text-gray-600">Mang lại vẻ đẹp hiện đại và sang trọng cho ngôi nhà.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gạch Thông Gió -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+  <div class="card product-card h-100 shadow-sm">
+    <img src="https://topmat.vn/images/products/2020/04/10/original/gach-tuynel-2-lo_1586514438.png" 
+         class="card-img-top" 
+         alt="Gạch Tuynel 2 Lỗ A1">
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Gạch Tuynel 2 Lỗ A1</h5>
+      <p class="card-text text-gray-600">
+        Loại gạch nung truyền thống, độ bền cao, kích thước chuẩn, phù hợp xây tường chịu lực và tường bao ngoài.
+      </p>
+    </div>
+  </div>
+</div>
+
+      <!-- Gạch Không Nung -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card product-card h-100 shadow-sm">
+          <img src="https://sp-ao.shortpixel.ai/client/q_lossless,ret_img,w_700/https://xaydunglongbinh.com/wp-content/uploads/2019/10/gach-terrazzo-da-nang-1.jpg" class="card-img-top" alt="Gạch Terrazzo">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Gạch Terrazzo</h5>
+            <p class="card-text text-gray-600">Bề mặt bóng mịn, hoa văn tự nhiên, độ bền cao – phù hợp cho sàn nhà, sân vườn và công trình cao cấp.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gạch Trang Trí -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+  <div class="card product-card h-100 shadow-sm">
+    <img src="https://vatlieuthienduc.com/wp-content/uploads/gach-nhe-aac2-1024x768.png" 
+         class="card-img-top" 
+         alt="Gạch Bê Tông Khí Chưng Áp">
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Gạch Bê Tông Khí Chưng Áp (AAC)</h5>
+      <p class="card-text text-gray-600">
+        Nhẹ, cách âm – cách nhiệt tốt, thân thiện môi trường và rút ngắn thời gian thi công.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- BÁO GIÁ NHANH -->
+  <section id="quote-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center text-3xl font-bold mb-4">Báo giá nhanh</h2>
+      <p class="text-center mb-5 text-gray-700">Chọn loại gạch và số lượng để nhận báo giá chi tiết</p>
+
+      <form action="https://formspree.io/f/xyzbeyon" method="POST" class="max-w-2xl mx-auto bg-white p-5 shadow-lg rounded-2xl">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Họ và tên</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Số điện thoại</label>
+            <input type="tel" class="form-control" id="phone" name="phonenumber" pattern="[0-9]{9,11}" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="brickType" class="form-label">Loại gạch</label>
+            <select class="form-select" id="brickType" name="brickType" required>
+              <option value="">-- Chọn loại gạch --</option>
+              <option value="gach-dac-A1">Gạch Đặc Tuynel A1</option>
+              <option value="gach-block-xi-mang">Gạch Block Xi Măng</option>
+              <option value="gach-op-lat">Gạch Ốp Lát Cao Cấp</option>
+              <option value="gach-2-lo">Gạch Tuynel 2 Lỗ A1</option>
+              <option value="gach-terrazzo">Gạch Terrazzo</option>
+              <option value="gach-AAC">Gạch Bê Tông Khí Chưng Áp (AAC)</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="quantity" class="form-label">Số lượng (viên)</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+          </div>
+
+          <div class="col-12">
+            <label for="note" class="form-label">Ghi chú thêm</label>
+            <textarea class="form-control" id="note" rows="3" name="note"></textarea>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-warning w-100 fw-bold text-white mt-3">Gửi yêu cầu báo giá</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- LIÊN HỆ -->
+  <section id="contact" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center text-3xl font-bold mb-4">Liên hệ với chúng tôi</h2>
+      <p class="text-center mb-5 text-gray-700">Chúng tôi luôn sẵn sàng hỗ trợ mọi thắc mắc và yêu cầu từ bạn</p>
+
+      <form action="https://formspree.io/f/xyzbeyon" method="POST" class="max-w-2xl mx-auto bg-white p-5 shadow-lg rounded-2xl">
+        <div class="mb-3">
+          <label for="contactName" class="form-label">Họ và tên</label>
+          <input type="text" class="form-control" id="contactName" name="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactPhone" class="form-label">Số điện thoại</label>
+          <input type="tel" class="form-control" id="contactPhone" name="phonenumber" pattern="[0-9]{9,11}" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="contactEmail" name="_replyto" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="contactMessage" class="form-label">Nội dung</label>
+          <textarea class="form-control" id="contactMessage" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-warning w-100 fw-bold text-white">Gửi liên hệ</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PHẢN HỒI KHÁCH HÀNG -->
+<section id="feedback" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center text-3xl font-bold mb-5">Phản hồi từ khách hàng</h2>
+    <div class="row g-4">
+      
+      <!-- Feedback 1 -->
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body text-center">
+            <p class="fst-italic text-gray-700">"Tôi đã sử dụng gạch Hoàng Thành Thăng Long cho công trình nhà mình — chất lượng rất tốt, màu sắc đẹp và giao hàng đúng hẹn!"</p>
+            <hr>
+            <h6 class="fw-bold text-orange-600 mb-0">Nguyễn Văn Hùng</h6>
+            <small class="text-muted">Hà Nội</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback 2 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body text-center">
+            <p class="fst-italic text-gray-700">"Gạch không nung rất bền, tiết kiệm chi phí. Nhân viên tư vấn chu đáo, tôi rất hài lòng."</p>
+            <hr>
+            <h6 class="fw-bold text-orange-600 mb-0">Trần Thị Lan</h6>
+            <small class="text-muted">Bắc Ninh</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback 3 -->
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body text-center">
+            <p class="fst-italic text-gray-700">"Công ty rất chuyên nghiệp, báo giá rõ ràng và giao hàng nhanh chóng. Tôi sẽ tiếp tục hợp tác lâu dài."</p>
+            <hr>
+            <h6 class="fw-bold text-orange-600 mb-0">Phạm Văn Minh</h6>
+            <small class="text-muted">Hải Dương</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NÚT QUAY LẠI ĐẦU TRANG -->
+<button id="backToTop" class="btn btn-warning text-white fw-bold" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none;
+  z-index: 1000;
+">
+  ↑
+</button>
+
+<script>
+  // Hiện nút khi cuộn xuống
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  // Cuộn mượt về đầu trang
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+  © 2025 Công ty TNHH Tập đoàn Hoàng Thành Thăng Long <br>
+  Địa chỉ: Số 8B, Ngõ 5, Phố Ao Sen, Phường Hà Đông, Thành phố Hà Nội, Việt Nam. <br>
+  Hotline: <strong>0934 626 355</strong>
+</footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
